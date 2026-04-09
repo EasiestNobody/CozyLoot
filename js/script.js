@@ -6,14 +6,14 @@
 const itemDB = {
   'hello-kitty': {
     common: [
-      { name: 'Hello Kitty Sticker Sheet', value: 99, img: 'assets/sanrio-stationery.png' },
-      { name: 'Hello Kitty Pencil Set', value: 149, img: 'assets/sanrio-stationery.png' },
-      { name: 'Hello Kitty Eraser Pack', value: 79, img: 'assets/sanrio-stationery.png' },
-      { name: 'Hello Kitty Washi Tape', value: 129, img: 'assets/sanrio-stationery.png' },
+      { name: 'Hello Kitty Sticker Sheet', value: 99, img: 'assets/hk-stationery.png' },
+      { name: 'Hello Kitty Pencil Set', value: 149, img: 'assets/hk-stationery.png' },
+      { name: 'Hello Kitty Eraser Pack', value: 79, img: 'assets/hk-stationery.png' },
+      { name: 'Hello Kitty Washi Tape', value: 129, img: 'assets/hk-stationery.png' },
     ],
     rare: [
       { name: 'Hello Kitty Mini Plush', value: 499, img: 'assets/hk-plush.png' },
-      { name: 'Hello Kitty Tote Bag', value: 599, img: 'assets/sanrio-accessories.png' },
+      { name: 'Hello Kitty Tote Bag', value: 599, img: 'assets/hk-accessories.png' },
     ],
     ultra: [
       { name: 'Hello Kitty Giant Plush', value: 1499, img: 'assets/hk-plush.png' },
@@ -21,14 +21,14 @@ const itemDB = {
   },
   'my-melody': {
     common: [
-      { name: 'My Melody Notebook', value: 149, img: 'assets/sanrio-stationery.png' },
-      { name: 'My Melody Hair Clips', value: 129, img: 'assets/sanrio-accessories.png' },
-      { name: 'My Melody Pen', value: 99, img: 'assets/sanrio-stationery.png' },
-      { name: 'My Melody Lip Balm', value: 179, img: 'assets/sanrio-selfcare.png' },
+      { name: 'My Melody Notebook', value: 149, img: 'assets/mm-stationery.png' },
+      { name: 'My Melody Hair Clips', value: 129, img: 'assets/mm-accessories.png' },
+      { name: 'My Melody Pen', value: 99, img: 'assets/mm-stationery.png' },
+      { name: 'My Melody Lip Balm', value: 179, img: 'assets/mm-selfcare.png' },
     ],
     rare: [
       { name: 'My Melody Plush', value: 549, img: 'assets/mm-plush.png' },
-      { name: 'My Melody Phone Case', value: 399, img: 'assets/sanrio-accessories.png' },
+      { name: 'My Melody Phone Case', value: 399, img: 'assets/mm-accessories.png' },
     ],
     ultra: [
       { name: 'My Melody Collector Plush', value: 1599, img: 'assets/mm-plush.png' },
@@ -36,14 +36,14 @@ const itemDB = {
   },
   'kuromi': {
     common: [
-      { name: 'Kuromi Sticker Pack', value: 99, img: 'assets/sanrio-stationery.png' },
-      { name: 'Kuromi Keychain', value: 149, img: 'assets/sanrio-accessories.png' },
-      { name: 'Kuromi Memo Pad', value: 119, img: 'assets/sanrio-stationery.png' },
-      { name: 'Kuromi Face Mask', value: 159, img: 'assets/sanrio-selfcare.png' },
+      { name: 'Kuromi Sticker Pack', value: 99, img: 'assets/kuromi-stationery.png' },
+      { name: 'Kuromi Keychain', value: 149, img: 'assets/kuromi-accessories.png' },
+      { name: 'Kuromi Memo Pad', value: 119, img: 'assets/kuromi-stationery.png' },
+      { name: 'Kuromi Face Mask', value: 159, img: 'assets/kuromi-selfcare.png' },
     ],
     rare: [
       { name: 'Kuromi Gothic Plush', value: 549, img: 'assets/kuromi-plush.png' },
-      { name: 'Kuromi Crossbody Bag', value: 699, img: 'assets/sanrio-accessories.png' },
+      { name: 'Kuromi Crossbody Bag', value: 699, img: 'assets/kuromi-accessories.png' },
     ],
     ultra: [
       { name: 'Kuromi Limited Ed. Plush', value: 1799, img: 'assets/kuromi-plush.png' },
@@ -51,10 +51,10 @@ const itemDB = {
   },
   'cinnamoroll': {
     common: [
-      { name: 'Cinnamoroll Stickers', value: 89, img: 'assets/sanrio-stationery.png' },
-      { name: 'Cinnamoroll Hand Cream', value: 199, img: 'assets/sanrio-selfcare.png' },
-      { name: 'Cinnamoroll Pen', value: 109, img: 'assets/sanrio-stationery.png' },
-      { name: 'Cinnamoroll Badge Set', value: 99, img: 'assets/sanrio-accessories.png' },
+      { name: 'Cinnamoroll Stickers', value: 89, img: 'assets/cinnamoroll-stationery.png' },
+      { name: 'Cinnamoroll Hand Cream', value: 199, img: 'assets/cinnamoroll-selfcare.png' },
+      { name: 'Cinnamoroll Pen', value: 109, img: 'assets/cinnamoroll-stationery.png' },
+      { name: 'Cinnamoroll Badge Set', value: 99, img: 'assets/cinnamoroll-accessories.png' },
     ],
     rare: [
       { name: 'Cinnamoroll Cloud Plush', value: 599, img: 'assets/cinnamoroll-plush.png' },
@@ -66,14 +66,14 @@ const itemDB = {
   },
   'pompompurin': {
     common: [
-      { name: 'Pompompurin Eraser', value: 79, img: 'assets/sanrio-stationery.png' },
-      { name: 'Pompompurin Sticker', value: 89, img: 'assets/sanrio-stationery.png' },
-      { name: 'Pompompurin Bath Bomb', value: 179, img: 'assets/sanrio-selfcare.png' },
-      { name: 'Pompompurin Pin', value: 99, img: 'assets/sanrio-accessories.png' },
+      { name: 'Pompompurin Eraser', value: 79, img: 'assets/pompompurin-stationery.png' },
+      { name: 'Pompompurin Sticker', value: 89, img: 'assets/pompompurin-stationery.png' },
+      { name: 'Pompompurin Bath Bomb', value: 179, img: 'assets/pompompurin-selfcare.png' },
+      { name: 'Pompompurin Pin', value: 99, img: 'assets/pompompurin-accessories.png' },
     ],
     rare: [
       { name: 'Pompompurin Plush', value: 549, img: 'assets/pompompurin-plush.png' },
-      { name: 'Pompompurin Lunchbox', value: 399, img: 'assets/sanrio-accessories.png' },
+      { name: 'Pompompurin Lunchbox', value: 399, img: 'assets/pompompurin-accessories.png' },
     ],
     ultra: [
       { name: 'Pompompurin Giant Plush', value: 1499, img: 'assets/pompompurin-plush.png' },
@@ -81,14 +81,14 @@ const itemDB = {
   },
   'korilakkuma': {
     common: [
-      { name: 'Korilakkuma Sticker Set', value: 99, img: 'assets/sanrio-stationery.png' },
-      { name: 'Korilakkuma Memo Pad', value: 119, img: 'assets/sanrio-stationery.png' },
-      { name: 'Korilakkuma Badge', value: 89, img: 'assets/sanrio-accessories.png' },
-      { name: 'Korilakkuma Lip Gloss', value: 159, img: 'assets/sanrio-selfcare.png' },
+      { name: 'Korilakkuma Sticker Set', value: 99, img: 'assets/kl-stationery.png' },
+      { name: 'Korilakkuma Memo Pad', value: 119, img: 'assets/kl-stationery.png' },
+      { name: 'Korilakkuma Badge', value: 89, img: 'assets/kl-accessories.png' },
+      { name: 'Korilakkuma Lip Gloss', value: 159, img: 'assets/kl-selfcare.png' },
     ],
     rare: [
       { name: 'Korilakkuma Plush', value: 549, img: 'assets/kl-plush.png' },
-      { name: 'Korilakkuma Pouch', value: 449, img: 'assets/sanrio-accessories.png' },
+      { name: 'Korilakkuma Pouch', value: 449, img: 'assets/kl-accessories.png' },
     ],
     ultra: [
       { name: 'Korilakkuma XL Plush', value: 1599, img: 'assets/kl-plush.png' },
@@ -100,39 +100,39 @@ const itemDB = {
 const products = [
   // Hello Kitty
   { id: 1, name: 'Hello Kitty Classic Plush 20cm', price: 549, original: 699, img: 'assets/hk-plush.png', badge: 'New', cat: 'hello-kitty', rating: 0 },
-  { id: 2, name: 'Hello Kitty Bow Stationery Set', price: 299, original: 399, img: 'assets/sanrio-stationery.png', badge: '', cat: 'hello-kitty', rating: 0 },
-  { id: 3, name: 'Hello Kitty Ribbon Tote Bag', price: 599, original: 0, img: 'assets/sanrio-accessories.png', badge: '', cat: 'hello-kitty', rating: 0 },
-  { id: 4, name: 'Hello Kitty Lip Balm & Hand Cream Set', price: 349, original: 0, img: 'assets/sanrio-selfcare.png', badge: '', cat: 'hello-kitty', rating: 0 },
+  { id: 2, name: 'Hello Kitty Bow Stationery Set', price: 299, original: 399, img: 'assets/hk-stationery.png', badge: '', cat: 'hello-kitty', rating: 0 },
+  { id: 3, name: 'Hello Kitty Ribbon Tote Bag', price: 599, original: 0, img: 'assets/hk-accessories.png', badge: '', cat: 'hello-kitty', rating: 0 },
+  { id: 4, name: 'Hello Kitty Lip Balm & Hand Cream Set', price: 349, original: 0, img: 'assets/hk-selfcare.png', badge: '', cat: 'hello-kitty', rating: 0 },
 
   // My Melody
   { id: 5, name: 'My Melody Flower Plush 25cm', price: 599, original: 799, img: 'assets/mm-plush.png', badge: 'New', cat: 'my-melody', rating: 0 },
-  { id: 6, name: 'My Melody Pastel Notebook Bundle', price: 249, original: 0, img: 'assets/sanrio-stationery.png', badge: '', cat: 'my-melody', rating: 0 },
-  { id: 7, name: 'My Melody Pink Phone Case', price: 399, original: 499, img: 'assets/sanrio-accessories.png', badge: '', cat: 'my-melody', rating: 0 },
-  { id: 8, name: 'My Melody Rose Face Mask Pack', price: 279, original: 0, img: 'assets/sanrio-selfcare.png', badge: '', cat: 'my-melody', rating: 0 },
+  { id: 6, name: 'My Melody Pastel Notebook Bundle', price: 249, original: 0, img: 'assets/mm-stationery.png', badge: '', cat: 'my-melody', rating: 0 },
+  { id: 7, name: 'My Melody Pink Phone Case', price: 399, original: 499, img: 'assets/mm-accessories.png', badge: '', cat: 'my-melody', rating: 0 },
+  { id: 8, name: 'My Melody Rose Face Mask Pack', price: 279, original: 0, img: 'assets/mm-selfcare.png', badge: '', cat: 'my-melody', rating: 0 },
 
   // Kuromi
   { id: 9, name: 'Kuromi Gothic Plush 20cm', price: 549, original: 0, img: 'assets/kuromi-plush.png', badge: 'New', cat: 'kuromi', rating: 0 },
-  { id: 10, name: 'Kuromi Dark Aesthetic Pen Set', price: 199, original: 279, img: 'assets/sanrio-stationery.png', badge: '', cat: 'kuromi', rating: 0 },
-  { id: 11, name: 'Kuromi Skull Crossbody Bag', price: 699, original: 899, img: 'assets/sanrio-accessories.png', badge: '', cat: 'kuromi', rating: 0 },
-  { id: 12, name: 'Kuromi Purple Bath Bomb Set', price: 329, original: 0, img: 'assets/sanrio-selfcare.png', badge: '', cat: 'kuromi', rating: 0 },
+  { id: 10, name: 'Kuromi Dark Aesthetic Pen Set', price: 199, original: 279, img: 'assets/kuromi-stationery.png', badge: '', cat: 'kuromi', rating: 0 },
+  { id: 11, name: 'Kuromi Skull Crossbody Bag', price: 699, original: 899, img: 'assets/kuromi-accessories.png', badge: '', cat: 'kuromi', rating: 0 },
+  { id: 12, name: 'Kuromi Purple Bath Bomb Set', price: 329, original: 0, img: 'assets/kuromi-selfcare.png', badge: '', cat: 'kuromi', rating: 0 },
 
   // Cinnamoroll
   { id: 13, name: 'Cinnamoroll Cloud Plush 30cm', price: 699, original: 899, img: 'assets/cinnamoroll-plush.png', badge: 'New', cat: 'cinnamoroll', rating: 0 },
-  { id: 14, name: 'Cinnamoroll Sky Blue Pencil Case', price: 249, original: 0, img: 'assets/sanrio-stationery.png', badge: '', cat: 'cinnamoroll', rating: 0 },
-  { id: 15, name: 'Cinnamoroll Fluffy Keychain', price: 199, original: 0, img: 'assets/sanrio-accessories.png', badge: '', cat: 'cinnamoroll', rating: 0 },
-  { id: 16, name: 'Cinnamoroll Vanilla Hand Cream', price: 229, original: 299, img: 'assets/sanrio-selfcare.png', badge: '', cat: 'cinnamoroll', rating: 0 },
+  { id: 14, name: 'Cinnamoroll Sky Blue Pencil Case', price: 249, original: 0, img: 'assets/cinnamoroll-stationery.png', badge: '', cat: 'cinnamoroll', rating: 0 },
+  { id: 15, name: 'Cinnamoroll Fluffy Keychain', price: 199, original: 0, img: 'assets/cinnamoroll-accessories.png', badge: '', cat: 'cinnamoroll', rating: 0 },
+  { id: 16, name: 'Cinnamoroll Vanilla Hand Cream', price: 229, original: 299, img: 'assets/cinnamoroll-selfcare.png', badge: '', cat: 'cinnamoroll', rating: 0 },
 
   // Pompompurin
   { id: 17, name: 'Pompompurin Pudding Plush 22cm', price: 549, original: 0, img: 'assets/pompompurin-plush.png', badge: 'New', cat: 'pompompurin', rating: 0 },
-  { id: 18, name: 'Pompompurin Honey Washi Tape Set', price: 149, original: 0, img: 'assets/sanrio-stationery.png', badge: '', cat: 'pompompurin', rating: 0 },
-  { id: 19, name: 'Pompompurin Beret Pin Set', price: 179, original: 0, img: 'assets/sanrio-accessories.png', badge: '', cat: 'pompompurin', rating: 0 },
-  { id: 20, name: 'Pompompurin Honey Lip Balm', price: 199, original: 249, img: 'assets/sanrio-selfcare.png', badge: '', cat: 'pompompurin', rating: 0 },
+  { id: 18, name: 'Pompompurin Honey Washi Tape Set', price: 149, original: 0, img: 'assets/pompompurin-stationery.png', badge: '', cat: 'pompompurin', rating: 0 },
+  { id: 19, name: 'Pompompurin Beret Pin Set', price: 179, original: 0, img: 'assets/pompompurin-accessories.png', badge: '', cat: 'pompompurin', rating: 0 },
+  { id: 20, name: 'Pompompurin Honey Lip Balm', price: 199, original: 249, img: 'assets/pompompurin-selfcare.png', badge: '', cat: 'pompompurin', rating: 0 },
 
   // Korilakkuma
   { id: 21, name: 'Korilakkuma Strawberry Plush 20cm', price: 549, original: 699, img: 'assets/kl-plush.png', badge: 'New', cat: 'korilakkuma', rating: 0 },
-  { id: 22, name: 'Korilakkuma Mini Notebook Set', price: 199, original: 0, img: 'assets/sanrio-stationery.png', badge: '', cat: 'korilakkuma', rating: 0 },
-  { id: 23, name: 'Korilakkuma Cat Ear Headband', price: 249, original: 0, img: 'assets/sanrio-accessories.png', badge: '', cat: 'korilakkuma', rating: 0 },
-  { id: 24, name: 'Korilakkuma Berry Face Mist', price: 299, original: 379, img: 'assets/sanrio-selfcare.png', badge: '', cat: 'korilakkuma', rating: 0 },
+  { id: 22, name: 'Korilakkuma Mini Notebook Set', price: 199, original: 0, img: 'assets/kl-stationery.png', badge: '', cat: 'korilakkuma', rating: 0 },
+  { id: 23, name: 'Korilakkuma Cat Ear Headband', price: 249, original: 0, img: 'assets/kl-accessories.png', badge: '', cat: 'korilakkuma', rating: 0 },
+  { id: 24, name: 'Korilakkuma Berry Face Mist', price: 299, original: 379, img: 'assets/kl-selfcare.png', badge: '', cat: 'korilakkuma', rating: 0 },
 
   // Mystery Boxes
   { id: 25, name: 'Sanrio Mystery Box - 5 Random Items', price: 499, original: 799, img: 'assets/sanrio-mystery-box.png', badge: 'Best Value', cat: 'mystery', rating: 0 },
