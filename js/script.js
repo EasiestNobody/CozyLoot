@@ -263,20 +263,6 @@ function drawWheel(canvasId) {
     ctx.restore();
   });
 
-  // Center cap
-  const capR = Math.max(16, w * 0.05);
-  ctx.shadowColor = 'rgba(0,0,0,0.4)';
-  ctx.shadowBlur = 6;
-  ctx.beginPath();
-  ctx.arc(cx, cy, capR, 0, 2 * Math.PI);
-  ctx.fillStyle = '#FF4D6D';
-  ctx.fill();
-  
-  ctx.shadowBlur = 0;
-  ctx.beginPath();
-  ctx.arc(cx, cy, capR * 0.6, 0, 2 * Math.PI);
-  ctx.fillStyle = '#FFF0F3';
-  ctx.fill();
 }
 
 // ---- TICK SOUND ----
