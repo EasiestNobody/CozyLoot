@@ -797,3 +797,21 @@ footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 40px 0 
   .mobile-nav { display: none; }
   body { padding-bottom: 0; }
 }
+
+/* ============================================
+   CARRD WATERMARK
+   ============================================ */
+.carrd-watermark {
+  display: block;
+  text-align: center;
+  padding: 24px 0 32px;
+  background: var(--white);
+  color: #a0aec0;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.carrd-watermark:hover {
+  color: #718096;
+}
