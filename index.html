@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CozyLoot — Sanrio Mystery Box Shop</title>
+  <meta name="description" content="CozyLoot is your go-to Sanrio mystery box shop. Unbox adorable Hello Kitty, My Melody, Kuromi, Cinnamoroll surprises and more!">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="top-bar">
+  <div class="top-bar-inner">
+    <a href="#" class="shop-logo">
+      <svg class="logo-svg" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="#fff" opacity="0.2"/><path d="M14 4C8.5 4 4 8.5 4 14s4.5 10 10 10 10-4.5 10-10S19.5 4 14 4z" fill="#fff" opacity="0.3"/><rect x="8" y="11" width="12" height="9" rx="3" fill="#fff"/><rect x="9" y="7" width="4" height="6" rx="2" fill="#fff"/><rect x="15" y="7" width="4" height="6" rx="2" fill="#fff"/><circle cx="11" cy="14" r="1.2" fill="#FF4D6D"/><circle cx="17" cy="14" r="1.2" fill="#FF4D6D"/><ellipse cx="14" cy="16" rx="1.5" ry="1" fill="#FF4D6D"/></svg>
+      <span class="logo-text">CozyLoot</span>
+    </a>
+    <div class="search-bar">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" placeholder="Search Sanrio items..." id="searchInput">
+    </div>
+    <div class="top-bar-actions">
+      <button class="icon-btn" aria-label="Notifications">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+      </button>
+      <button class="icon-btn wishlist-btn" aria-label="Wishlist" onclick="toggleWishlistDrawer()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <span class="cart-badge wishlist-badge" id="wishlistBadge" style="display:none;">0</span>
+      </button>
+      <button class="icon-btn cart-btn" aria-label="Cart" onclick="toggleCartDrawer()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h3>Your Cart</h3>
+    <button class="cart-close-btn" onclick="toggleCartDrawer()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-drawer-body" id="cartBody">
+    <p class="cart-empty">Your cart is empty</p>
+  </div>
+  <div class="cart-drawer-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">P0</span>
+    </div>
+    <button class="btn-checkout">Checkout</button>
+  </div>
+</div>
+
+<!-- WISHLIST DRAWER -->
+<div class="cart-overlay" id="wishlistOverlay" onclick="toggleWishlistDrawer()"></div>
+<div class="cart-drawer" id="wishlistDrawer">
+  <div class="cart-drawer-header">
+    <h3>❤️ Wishlist</h3>
+    <button class="cart-close-btn" onclick="toggleWishlistDrawer()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-drawer-body" id="wishlistBody">
+    <p class="cart-empty">Your wishlist is empty ❤️</p>
+  </div>
+</div>
+
+<!-- HERO BANNER -->
+<section class="hero-banner" id="home">
+  <div class="banner-slide active">
+    <img src="assets/hero-banner.png" alt="Sanrio Shop Banner">
+    <div class="banner-overlay">
+      <span class="banner-badge">NEW ARRIVALS</span>
+      <h1>Unbox Your <span>Sanrio</span> Surprise</h1>
+      <p>Mystery boxes filled with Hello Kitty, My Melody, Kuromi & more!</p>
+      <a href="#products" class="banner-cta">Shop Now</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FLASH DEALS -->
+<section class="flash-section">
+  <div class="container">
+    <div class="flash-header">
+      <div class="flash-title">
+        <svg class="flash-bolt" viewBox="0 0 20 20" fill="currentColor"><path d="M11 0L4 12h5l-2 8 9-12h-5z"/></svg>
+        <h2>Flash Deals</h2>
+        <span class="flash-badge">LIVE</span>
+      </div>
+      <div class="flash-timer">
+        <span>Ends in</span>
+        <div class="timer-blocks">
+          <span class="timer-block" id="timerH">02</span>:
+          <span class="timer-block" id="timerM">45</span>:
+          <span class="timer-block" id="timerS">30</span>
+        </div>
+      </div>
+    </div>
+    <div class="flash-scroll" id="flashGrid"></div>
+  </div>
+</section>
+
+<!-- TRY YOUR LUCK — Inline teaser -->
+<section class="luck-section" id="luck">
+  <div class="container">
+    <div class="luck-banner">
+      <div class="luck-banner-bg"></div>
+      <div class="luck-banner-content">
+        <span class="luck-badge">EXCLUSIVE</span>
+        <h2>Try Your Luck!</h2>
+        <p>Spin the wheel to win <strong>rare</strong> and <strong>ultra-rare</strong> Sanrio items!</p>
+      </div>
+    </div>
+
+    <div class="luck-layout">
+      <div class="luck-controls">
+        <div class="luck-control-group">
+          <label>Choose Character</label>
+          <div class="char-chips" id="charChips">
+            <button class="char-chip active" data-char="hello-kitty" onclick="selectCharacter('hello-kitty')">Hello Kitty</button>
+            <button class="char-chip" data-char="my-melody" onclick="selectCharacter('my-melody')">My Melody</button>
+            <button class="char-chip" data-char="kuromi" onclick="selectCharacter('kuromi')">Kuromi</button>
+            <button class="char-chip" data-char="cinnamoroll" onclick="selectCharacter('cinnamoroll')">Cinnamoroll</button>
+            <button class="char-chip" data-char="pompompurin" onclick="selectCharacter('pompompurin')">Pompompurin</button>
+            <button class="char-chip" data-char="korilakkuma" onclick="selectCharacter('korilakkuma')">Korilakkuma</button>
+          </div>
+        </div>
+        <div class="luck-control-group">
+          <label>Item Category</label>
+          <div class="type-chips" id="typeChips">
+            <button class="type-chip active" data-type="plushie" onclick="selectType('plushie')">Plushies</button>
+            <button class="type-chip" data-type="stationery" onclick="selectType('stationery')">Stationery</button>
+            <button class="type-chip" data-type="accessories" onclick="selectType('accessories')">Accessories</button>
+            <button class="type-chip" data-type="selfcare" onclick="selectType('selfcare')">Self-Care</button>
+            <button class="type-chip" data-type="random" onclick="selectType('random')">Random</button>
+          </div>
+        </div>
+        <div class="spin-info">
+          <span class="spin-counter" id="spinCounter">5 spins left</span>
+        </div>
+        <button class="btn-spin" id="spinBtnInline" onclick="openSpinModal()">Spin the Wheel</button>
+      </div>
+
+      <div class="luck-wheel-preview">
+        <div class="wheel-preview-wrapper" onclick="openSpinModal()">
+          <canvas id="previewWheel" width="400" height="400"></canvas>
+          <div class="wheel-preview-overlay">
+            <span>Tap to Spin</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPIN MODAL (Fullscreen overlay) -->
+<div class="spin-modal" id="spinModal">
+  <div class="spin-modal-backdrop" onclick="closeSpinModal()"></div>
+  <div class="spin-modal-content">
+    <button class="spin-modal-close" onclick="closeSpinModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="spin-modal-wheel-area">
+      <div class="wheel-wrapper" id="modalWheelWrapper">
+        <div class="wheel-pointer">
+          <svg width="36" height="44" viewBox="0 0 36 44" fill="none">
+            <path d="M18 44L2 10C2 5 7 0 18 0C29 0 34 5 34 10L18 44Z" fill="#FF4D6D"/>
+            <path d="M18 37L5 12C5 7 9 4 18 4C27 4 31 7 31 12L18 37Z" fill="#FF6B8A"/>
+            <circle cx="18" cy="10" r="4" fill="#fff"/>
+            <circle cx="18" cy="10" r="2" fill="#FF4D6D"/>
+          </svg>
+        </div>
+        <canvas id="spinWheel" class="wheel-canvas" width="460" height="460"></canvas>
+        <div class="wheel-center-cap">
+          <span class="wheel-center-text">SPIN</span>
+        </div>
+      </div>
+      <button class="btn-spin-modal" id="spinBtn" onclick="spinWheel()">Spin Now</button>
+      <div class="spin-result-label" id="spinResultLabel"></div>
+    </div>
+
+    <!-- Result Panel (shows after spin) -->
+    <div class="spin-result-panel" id="spinResultPanel">
+      <div class="result-rarity-tag" id="resultRarityTag"></div>
+      <div class="result-item-card" id="resultItemCard"></div>
+      <div class="result-value" id="resultValue"></div>
+      <p class="result-cart-msg">Added to your cart!</p>
+      <div class="result-actions">
+        <button class="btn-outline" onclick="spinAgain()">Spin Again</button>
+        <button class="btn-primary" onclick="closeSpinModal()">Continue Shopping</button>
+      </div>
+      <div class="reset-counter" id="resetCounter"></div>
+    </div>
+  </div>
+  <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+</div>
+
+<!-- CATEGORY BAR -->
+<section class="category-bar">
+  <div class="category-scroll">
+    <button class="cat-chip active" data-cat="all" onclick="filterProducts('all')">
+      <span class="cat-icon"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2l2.4 4.8L18 7.6l-4 3.9.9 5.5L10 14.4 5.1 17l.9-5.5-4-3.9 5.6-.8z"/></svg></span>
+      <span>All</span>
+    </button>
+    <button class="cat-chip" data-cat="hello-kitty" onclick="filterProducts('hello-kitty')">
+      <span class="cat-icon">HK</span>
+      <span>Hello Kitty</span>
+    </button>
+    <button class="cat-chip" data-cat="my-melody" onclick="filterProducts('my-melody')">
+      <span class="cat-icon">MM</span>
+      <span>My Melody</span>
+    </button>
+    <button class="cat-chip" data-cat="kuromi" onclick="filterProducts('kuromi')">
+      <span class="cat-icon">KR</span>
+      <span>Kuromi</span>
+    </button>
+    <button class="cat-chip" data-cat="cinnamoroll" onclick="filterProducts('cinnamoroll')">
+      <span class="cat-icon">CN</span>
+      <span>Cinnamoroll</span>
+    </button>
+    <button class="cat-chip" data-cat="pompompurin" onclick="filterProducts('pompompurin')">
+      <span class="cat-icon">PP</span>
+      <span>Pompompurin</span>
+    </button>
+    <button class="cat-chip" data-cat="korilakkuma" onclick="filterProducts('korilakkuma')">
+      <span class="cat-icon">KL</span>
+      <span>Korilakkuma</span>
+    </button>
+    <button class="cat-chip" data-cat="mystery" onclick="filterProducts('mystery')">
+      <span class="cat-icon"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M4 4h12v2H4zm0 10h12v2H4zm-2-5h16v2H2z"/></svg></span>
+      <span>Mystery Box</span>
+    </button>
+  </div>
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="section-header">
+      <h2>Recommended For You</h2>
+      <a href="#" class="see-all">See All</a>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-text footer-logo">CozyLoot</span>
+        <p>Your favorite Sanrio mystery box shop. Curated surprises delivered with love.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#products">All Products</a>
+          <a href="#luck">Try Your Luck</a>
+          <a href="#">Mystery Boxes</a>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <a href="#">TikTok</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CozyLoot. All rights reserved.</p>
+      <p class="dev-credit">Developed by Zaira Bergavera</p>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav">
+  <a href="#home" class="mobile-nav-item active">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="#products" class="mobile-nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/></svg>
+    <span>Shop</span>
+  </a>
+  <a href="#luck" class="mobile-nav-item luck-nav" onclick="openSpinModal()">
+    <div class="luck-nav-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 010 20M2 12h20"/></svg>
+    </div>
+    <span>Spin</span>
+  </a>
+  <a href="#" class="mobile-nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+    <span>Wishlist</span>
+  </a>
+  <a href="#" class="mobile-nav-item" onclick="toggleCartDrawer()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+    <span>Cart</span>
+  </a>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
