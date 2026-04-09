@@ -299,17 +299,17 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/></svg>
     <span>Shop</span>
   </a>
-  <a href="#luck" class="mobile-nav-item luck-nav" onclick="openSpinModal()">
+  <a href="#luck" class="mobile-nav-item luck-nav" onclick="event.preventDefault(); openSpinModal()">
     <div class="luck-nav-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 010 20M2 12h20"/></svg>
     </div>
     <span>Spin</span>
   </a>
-  <a href="#" class="mobile-nav-item">
+  <a href="#" class="mobile-nav-item" onclick="event.preventDefault(); toggleWishlistDrawer()">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
     <span>Wishlist</span>
   </a>
-  <a href="#" class="mobile-nav-item" onclick="toggleCartDrawer()">
+  <a href="#" class="mobile-nav-item" onclick="event.preventDefault(); toggleCartDrawer()">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
     <span>Cart</span>
   </a>
