@@ -155,8 +155,10 @@ let isSpinning = false;
 let spinRotation = 0;
 
 // ---- ANTI-ABUSE ----
-const LIMITS = { mainSpins: 5, mainResets: 3 };
-const usage = { mainSpins: 0, mainResets: 0 };
+function canSpinToday() {
+  const lastSpin = localStorage.getItem('lastSpinDate');
+  return lastSpin !== new Date().toDateString();
+}
 
 // ---- WHEEL COLORS (vivid, high-contrast) ----
 const wheelColors = [
@@ -317,8 +319,8 @@ function closeSpinModal() {
 // ---- SPIN WHEEL ----
 function spinWheel() {
   if (isSpinning) return;
-  if (usage.mainSpins >= LIMITS.mainSpins) {
-    showToast('No spins left for this session!', 'warning');
+  if (!canSpinToday()) {
+    showToast('Come back tomorrow for another spin!', 'warning');
     return;
   }
 
@@ -326,7 +328,7 @@ function spinWheel() {
   if (!canvas) return;
 
   isSpinning = true;
-  usage.mainSpins++;
+  localStorage.setItem('lastSpinDate', new Date().toDateString());
   updateSpinCounter();
 
   document.getElementById('spinResultPanel').classList.remove('show');
@@ -336,10 +338,10 @@ function spinWheel() {
   const items = currentWheelItems;
   const rng = Math.random();
   let winnerIdx;
-  if (rng < 0.05) {
+  if (rng < 0.01) {
     const ultras = items.map((it, i) => it.rarity === 'ultra' ? i : -1).filter(i => i >= 0);
     winnerIdx = ultras.length ? ultras[Math.floor(Math.random() * ultras.length)] : Math.floor(Math.random() * items.length);
-  } else if (rng < 0.25) {
+  } else if (rng < 0.10) {
     const rares = items.map((it, i) => it.rarity === 'rare' ? i : -1).filter(i => i >= 0);
     winnerIdx = rares.length ? rares[Math.floor(Math.random() * rares.length)] : Math.floor(Math.random() * items.length);
   } else {
@@ -388,19 +390,18 @@ function showSpinResult(item) {
     `;
   }
 
-  const value = document.getElementById('resultValue');
-  if (value) value.textContent = 'P' + item.value.toLocaleString();
+  const discountRate = 0.8; // 80% discount
+  const discountedPrice = Math.floor(item.value * (1 - discountRate));
 
-  const rc = document.getElementById('resetCounter');
-  if (rc) {
-    const left = LIMITS.mainResets - usage.mainResets;
-    rc.textContent = left + ' reset' + (left !== 1 ? 's' : '') + ' left';
+  const value = document.getElementById('resultValue');
+  if (value) {
+    value.innerHTML = `<span style="text-decoration: line-through; color: var(--text-light); font-size: 0.8em; margin-right: 8px;">P${item.value.toLocaleString()}</span>P${discountedPrice.toLocaleString()}`;
   }
 
   panel.classList.add('show');
 
   // Auto-add to cart
-  addToCart(item);
+  addToCart({ ...item, value: discountedPrice });
 
   // Confetti for rare/ultra
   if (item.rarity !== 'common') {
@@ -411,24 +412,6 @@ function showSpinResult(item) {
   }
 }
 
-function spinAgain() {
-  if (usage.mainSpins >= LIMITS.mainSpins) {
-    showToast('No spins left!', 'warning');
-    return;
-  }
-  document.getElementById('spinResultPanel').classList.remove('show');
-  document.querySelector('.spin-modal-wheel-area').style.display = 'flex';
-  drawWheel('spinWheel');
-}
-
-function resetSpin() {
-  if (usage.mainResets >= LIMITS.mainResets) {
-    showToast('No resets left for this session!', 'warning');
-    return;
-  }
-  usage.mainResets++;
-  spinAgain();
-}
 
 // ---- CART ----
 function addToCart(item) {
@@ -509,12 +492,16 @@ function selectType(type) {
 function updateSpinCounter() {
   const el = document.getElementById('spinCounter');
   if (!el) return;
-  const left = LIMITS.mainSpins - usage.mainSpins;
-  el.textContent = left + ' spin' + (left !== 1 ? 's' : '') + ' left';
-  if (left <= 1) el.classList.add('low');
-  if (left <= 0) {
+  const canSpin = canSpinToday();
+  el.textContent = canSpin ? '1 spin available today' : 'No spins left today';
+  if (!canSpin) {
+    el.classList.add('low');
     document.getElementById('spinBtn')?.setAttribute('disabled', 'true');
     document.getElementById('spinBtnInline')?.setAttribute('disabled', 'true');
+  } else {
+    el.classList.remove('low');
+    document.getElementById('spinBtn')?.removeAttribute('disabled');
+    document.getElementById('spinBtnInline')?.removeAttribute('disabled');
   }
 }
 
