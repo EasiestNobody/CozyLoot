@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CozyLoot — Sanrio Mystery Box Shop</title>
-  <meta name="description" content="CozyLoot is your go-to Sanrio mystery box shop. Unbox adorable Hello Kitty, My Melody, Kuromi, Cinnamoroll surprises and more!">
+  <title>CozyLoot — Sanrio Mystery Box Shop ♡</title>
+  <meta name="description" content="CozyLoot is your cutest Sanrio mystery box shop! Unbox adorable Hello Kitty, My Melody, Kuromi, Cinnamoroll surprises and more!">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,12 +15,12 @@
 <header class="top-bar">
   <div class="top-bar-inner">
     <a href="#" class="shop-logo">
-      <svg class="logo-svg" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="#fff" opacity="0.2"/><path d="M14 4C8.5 4 4 8.5 4 14s4.5 10 10 10 10-4.5 10-10S19.5 4 14 4z" fill="#fff" opacity="0.3"/><rect x="8" y="11" width="12" height="9" rx="3" fill="#fff"/><rect x="9" y="7" width="4" height="6" rx="2" fill="#fff"/><rect x="15" y="7" width="4" height="6" rx="2" fill="#fff"/><circle cx="11" cy="14" r="1.2" fill="#FF4D6D"/><circle cx="17" cy="14" r="1.2" fill="#FF4D6D"/><ellipse cx="14" cy="16" rx="1.5" ry="1" fill="#FF4D6D"/></svg>
+      <svg class="logo-svg" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="#F4A7B9" opacity="0.25"/><rect x="8" y="11" width="12" height="9" rx="3" fill="#F4A7B9"/><rect x="9" y="7" width="4" height="6" rx="2" fill="#F4A7B9"/><rect x="15" y="7" width="4" height="6" rx="2" fill="#F4A7B9"/><circle cx="11" cy="14" r="1.2" fill="#E8889A"/><circle cx="17" cy="14" r="1.2" fill="#E8889A"/><ellipse cx="14" cy="16" rx="1.5" ry="1" fill="#E8889A"/></svg>
       <span class="logo-text">CozyLoot</span>
     </a>
     <div class="search-bar">
       <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" placeholder="Search Sanrio items..." id="searchInput">
+      <input type="text" placeholder="Search cute items... ♡" id="searchInput">
     </div>
     <div class="top-bar-actions">
       <button class="icon-btn" aria-label="Notifications">
@@ -42,20 +42,20 @@
 <div class="cart-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
 <div class="cart-drawer" id="cartDrawer">
   <div class="cart-drawer-header">
-    <h3>Your Cart</h3>
+    <h3>♡ Your Cart</h3>
     <button class="cart-close-btn" onclick="toggleCartDrawer()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
   <div class="cart-drawer-body" id="cartBody">
-    <p class="cart-empty">Your cart is empty</p>
+    <p class="cart-empty">Your cart is empty ♡</p>
   </div>
   <div class="cart-drawer-footer" id="cartFooter" style="display:none;">
     <div class="cart-total">
       <span>Total</span>
       <span id="cartTotal">P0</span>
     </div>
-    <button class="btn-checkout">Checkout</button>
+    <button class="btn-checkout">Checkout ♡</button>
   </div>
 </div>
 
@@ -63,25 +63,25 @@
 <div class="cart-overlay" id="wishlistOverlay" onclick="toggleWishlistDrawer()"></div>
 <div class="cart-drawer" id="wishlistDrawer">
   <div class="cart-drawer-header">
-    <h3>❤️ Wishlist</h3>
+    <h3>♡ Wishlist</h3>
     <button class="cart-close-btn" onclick="toggleWishlistDrawer()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
   <div class="cart-drawer-body" id="wishlistBody">
-    <p class="cart-empty">Your wishlist is empty ❤️</p>
+    <p class="cart-empty">Your wishlist is empty ♡</p>
   </div>
 </div>
 
-<!-- HERO BANNER -->
+<!-- HERO BANNER — Scrapbook Welcome -->
 <section class="hero-banner" id="home">
   <div class="banner-slide active">
     <img src="assets/hero-banner.png" alt="Sanrio Shop Banner">
     <div class="banner-overlay">
-      <span class="banner-badge">NEW ARRIVALS</span>
-      <h1>Unbox Your <span>Sanrio</span> Surprise</h1>
-      <p>Mystery boxes filled with Hello Kitty, My Melody, Kuromi & more!</p>
-      <a href="#products" class="banner-cta">Shop Now</a>
+      <span class="banner-badge">✿ NEW ARRIVALS ✿</span>
+      <h1>Welcome to <span>CozyLoot</span> !</h1>
+      <p>Mystery boxes filled with Hello Kitty, My Melody, Kuromi & more adorable surprises~</p>
+      <a href="#products" class="banner-cta">♡ Shop Now</a>
     </div>
   </div>
 </section>
@@ -93,7 +93,7 @@
     <div class="flash-header">
       <div class="flash-title">
         <svg class="flash-bolt" viewBox="0 0 20 20" fill="currentColor"><path d="M11 0L4 12h5l-2 8 9-12h-5z"/></svg>
-        <h2>Flash Deals</h2>
+        <h2>✧ Flash Deals ✧</h2>
         <span class="flash-badge">LIVE</span>
       </div>
       <div class="flash-timer">
@@ -115,16 +115,16 @@
     <div class="luck-banner">
       <div class="luck-banner-bg"></div>
       <div class="luck-banner-content">
-        <span class="luck-badge">EXCLUSIVE</span>
-        <h2>Try Your Luck!</h2>
-        <p>Spin the wheel to win <strong>rare</strong> and <strong>ultra-rare</strong> Sanrio items!</p>
+        <span class="luck-badge">✧ EXCLUSIVE ✧</span>
+        <h2>✿ Try Your Luck! ✿</h2>
+        <p>Spin the wheel to win <strong>rare</strong> and <strong>ultra-rare</strong> Sanrio items~</p>
       </div>
     </div>
 
     <div class="luck-layout">
       <div class="luck-controls">
         <div class="luck-control-group">
-          <label>Choose Character</label>
+          <label>♡ Choose Character</label>
           <div class="char-chips" id="charChips">
             <button class="char-chip active" data-char="hello-kitty" onclick="selectCharacter('hello-kitty')">Hello Kitty</button>
             <button class="char-chip" data-char="my-melody" onclick="selectCharacter('my-melody')">My Melody</button>
@@ -135,7 +135,7 @@
           </div>
         </div>
         <div class="luck-control-group">
-          <label>Item Category</label>
+          <label>♡ Item Category</label>
           <div class="type-chips" id="typeChips">
             <button class="type-chip active" data-type="plushie" onclick="selectType('plushie')">Plushies</button>
             <button class="type-chip" data-type="stationery" onclick="selectType('stationery')">Stationery</button>
@@ -147,14 +147,14 @@
         <div class="spin-info">
           <span class="spin-counter" id="spinCounter">1 spin available today</span>
         </div>
-        <button class="btn-spin" id="spinBtnInline" onclick="openSpinModal()">Spin the Wheel</button>
+        <button class="btn-spin" id="spinBtnInline" onclick="openSpinModal()">✧ Spin the Wheel ✧</button>
       </div>
 
       <div class="luck-wheel-preview">
         <div class="wheel-preview-wrapper" onclick="openSpinModal()">
           <canvas id="previewWheel" width="400" height="400"></canvas>
           <div class="wheel-preview-overlay">
-            <span>Tap to Spin</span>
+            <span>Tap to Spin ♡</span>
           </div>
         </div>
       </div>
@@ -173,15 +173,15 @@
       <div class="wheel-wrapper" id="modalWheelWrapper">
         <div class="wheel-pointer">
           <svg width="36" height="44" viewBox="0 0 36 44" fill="none">
-            <path d="M18 44L2 10C2 5 7 0 18 0C29 0 34 5 34 10L18 44Z" fill="#FF4D6D"/>
-            <path d="M18 37L5 12C5 7 9 4 18 4C27 4 31 7 31 12L18 37Z" fill="#FF6B8A"/>
+            <path d="M18 44L2 10C2 5 7 0 18 0C29 0 34 5 34 10L18 44Z" fill="#E8889A"/>
+            <path d="M18 37L5 12C5 7 9 4 18 4C27 4 31 7 31 12L18 37Z" fill="#F4A7B9"/>
             <circle cx="18" cy="10" r="4" fill="#fff"/>
-            <circle cx="18" cy="10" r="2" fill="#FF4D6D"/>
+            <circle cx="18" cy="10" r="2" fill="#E8889A"/>
           </svg>
         </div>
         <canvas id="spinWheel" class="wheel-canvas" width="460" height="460"></canvas>
       </div>
-      <button class="btn-spin-modal" id="spinBtn" onclick="spinWheel()">Spin Now</button>
+      <button class="btn-spin-modal" id="spinBtn" onclick="spinWheel()">✧ Spin Now ✧</button>
       <div class="spin-result-label" id="spinResultLabel"></div>
     </div>
 
@@ -190,9 +190,9 @@
       <div class="result-rarity-tag" id="resultRarityTag"></div>
       <div class="result-item-card" id="resultItemCard"></div>
       <div class="result-value" id="resultValue"></div>
-      <p class="result-cart-msg">Added to your cart with an 80% discount!</p>
+      <p class="result-cart-msg">Added to your cart with an 80% discount! ♡</p>
       <div class="result-actions">
-        <button class="btn-primary" onclick="closeSpinModal()">Continue Shopping</button>
+        <button class="btn-primary" onclick="closeSpinModal()">♡ Continue Shopping</button>
       </div>
     </div>
   </div>
@@ -203,35 +203,35 @@
 <section class="category-bar">
   <div class="category-scroll">
     <button class="cat-chip active" data-cat="all" onclick="filterProducts('all')">
-      <span class="cat-icon"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2l2.4 4.8L18 7.6l-4 3.9.9 5.5L10 14.4 5.1 17l.9-5.5-4-3.9 5.6-.8z"/></svg></span>
+      <span class="cat-icon">⭐</span>
       <span>All</span>
     </button>
     <button class="cat-chip" data-cat="hello-kitty" onclick="filterProducts('hello-kitty')">
-      <span class="cat-icon">HK</span>
+      <span class="cat-icon">🎀</span>
       <span>Hello Kitty</span>
     </button>
     <button class="cat-chip" data-cat="my-melody" onclick="filterProducts('my-melody')">
-      <span class="cat-icon">MM</span>
+      <span class="cat-icon">🌸</span>
       <span>My Melody</span>
     </button>
     <button class="cat-chip" data-cat="kuromi" onclick="filterProducts('kuromi')">
-      <span class="cat-icon">KR</span>
+      <span class="cat-icon">💜</span>
       <span>Kuromi</span>
     </button>
     <button class="cat-chip" data-cat="cinnamoroll" onclick="filterProducts('cinnamoroll')">
-      <span class="cat-icon">CN</span>
+      <span class="cat-icon">☁️</span>
       <span>Cinnamoroll</span>
     </button>
     <button class="cat-chip" data-cat="pompompurin" onclick="filterProducts('pompompurin')">
-      <span class="cat-icon">PP</span>
+      <span class="cat-icon">🍮</span>
       <span>Pompompurin</span>
     </button>
     <button class="cat-chip" data-cat="korilakkuma" onclick="filterProducts('korilakkuma')">
-      <span class="cat-icon">KL</span>
+      <span class="cat-icon">🧸</span>
       <span>Korilakkuma</span>
     </button>
     <button class="cat-chip" data-cat="mystery" onclick="filterProducts('mystery')">
-      <span class="cat-icon"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M4 4h12v2H4zm0 10h12v2H4zm-2-5h16v2H2z"/></svg></span>
+      <span class="cat-icon">🎁</span>
       <span>Mystery Box</span>
     </button>
   </div>
@@ -241,8 +241,8 @@
 <section class="products-section" id="products">
   <div class="container">
     <div class="section-header">
-      <h2>Recommended For You</h2>
-      <a href="#" class="see-all">See All</a>
+      <h2>✿ Recommended For You</h2>
+      <a href="#" class="see-all">See All →</a>
     </div>
     <div class="products-grid" id="productsGrid"></div>
   </div>
@@ -254,7 +254,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <span class="logo-text footer-logo">CozyLoot</span>
-        <p>Your favorite Sanrio mystery box shop. Curated surprises delivered with love.</p>
+        <p>Your favorite Sanrio mystery box shop~<br>Curated surprises delivered with love ♡</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
@@ -279,7 +279,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 CozyLoot. All rights reserved.</p>
-      <p class="dev-credit">Developed by Zaira Bergavera</p>
+      <p class="dev-credit">Developed by Zaira Bergavera ♡</p>
     </div>
   </div>
 </footer>

@@ -1,5 +1,5 @@
 // ============================================
-// CozyLoot — Sanrio TikTok Shop
+// CozyLoot — Kawaii Sanrio Scrapbook Shop
 // ============================================
 
 // ---- SANRIO ITEM DATABASE (for spin wheel) ----
@@ -160,25 +160,39 @@ function canSpinToday() {
   return lastSpin !== new Date().toDateString();
 }
 
-// ---- WHEEL COLORS (vivid, high-contrast) ----
+// ---- WHEEL COLORS (soft kawaii pastels) ----
 const wheelColors = [
-  ['#E91E63', '#F06292'],
-  ['#9C27B0', '#BA68C8'],
-  ['#FF6F00', '#FFA726'],
-  ['#00897B', '#4DB6AC'],
-  ['#D81B60', '#F48FB1'],
-  ['#5E35B1', '#9575CD'],
+  ['#F4A7B9', '#FDDDE6'],
+  ['#D8C4E9', '#F0E6F6'],
+  ['#B8E6D0', '#D4F0E2'],
+  ['#FFE5A0', '#FFF3CC'],
+  ['#E8889A', '#F4B8C7'],
+  ['#C5D9A4', '#DDE9C8'],
 ];
 
 // ---- BUILD WHEEL ITEMS ----
 function getWheelItems() {
   const charData = itemDB[currentCharacter];
   if (!charData) return [];
-  const items = [];
-  charData.common.forEach(item => items.push({ ...item, rarity: 'common' }));
-  charData.rare.forEach(item => items.push({ ...item, rarity: 'rare' }));
-  charData.ultra.forEach(item => items.push({ ...item, rarity: 'ultra' }));
-  return items.sort(() => Math.random() - 0.5).slice(0, 8);
+  let allItems = [];
+  charData.common.forEach(item => allItems.push({ ...item, rarity: 'common' }));
+  charData.rare.forEach(item => allItems.push({ ...item, rarity: 'rare' }));
+  charData.ultra.forEach(item => allItems.push({ ...item, rarity: 'ultra' }));
+
+  if (currentType !== 'random') {
+    let keyword = currentType === 'plushie' ? 'plush' : currentType;
+    let filtered = allItems.filter(item => item.img.includes(keyword) || item.name.toLowerCase().includes(keyword));
+    if (filtered.length > 0) {
+      allItems = filtered;
+    }
+  }
+
+  const result = [];
+  const pool = [...allItems].sort(() => Math.random() - 0.5);
+  for (let i = 0; i < 8; i++) {
+    result.push(pool[i % pool.length]);
+  }
+  return result.sort(() => Math.random() - 0.5);
 }
 
 let currentWheelItems = [];
@@ -713,7 +727,7 @@ function fireConfetti() {
   canvas.classList.add('active');
 
   const ctx = canvas.getContext('2d');
-  const colors = ['#FF6B8A', '#FFD93D', '#9B59B6', '#FF4D6D', '#FFB5C8', '#C39BD3'];
+  const colors = ['#F4A7B9', '#FFE5A0', '#D8C4E9', '#E8889A', '#B8E6D0', '#FDDDE6'];
   const pieces = Array.from({ length: 120 }, () => ({
     x: Math.random() * canvas.width,
     y: Math.random() * -canvas.height,
